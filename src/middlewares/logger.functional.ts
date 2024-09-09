@@ -9,7 +9,7 @@ import { Request, Response, NextFunction } from 'express';
 export function logger(req: Request, res: Response, next: NextFunction) {
   try {
     console.log(`Request function...`, req.headers);
-    throw new Error('Error in logger functional middleware');
+    // throw new Error('Error in logger functional middleware');
     next();
   } catch (err) {
     console.log('Error in functional logger middleware', err);

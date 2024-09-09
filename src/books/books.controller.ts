@@ -1,9 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Headers, Request, UseGuards } from '@nestjs/common';
+import { BooksAuthGuard } from 'src/guards/books';
 
 @Controller('books')
 export class BooksController {
+  @UseGuards(BooksAuthGuard)
   @Get()
-  getBooks(): any {
+  getBooks(@Headers() headers: any): any {
+    console.log('Request headers in Books Controller::::', headers);
     return [
       { name: 'Harry Potter and Secret Chamber', author: 'J.K Rolling' },
       { name: 'Harry Potter and Prisoner of Azakban', author: 'J.K Rolling' },
