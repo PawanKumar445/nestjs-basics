@@ -8,9 +8,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { BooksModule } from './books/books.module';
+import { ExceptionsModule } from './exceptions/exceptions.module';
 
 @Module({
-  imports: [BooksModule],
+  imports: [BooksModule, ExceptionsModule],
   controllers: [AppController],
   providers: [AppService],
 })
