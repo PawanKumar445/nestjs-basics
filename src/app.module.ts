@@ -9,9 +9,10 @@ import { AppService } from './app.service';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { BooksModule } from './books/books.module';
 import { ExceptionsModule } from './exceptions/exceptions.module';
+import { InterceptorsModule } from './interceptors/interceptors.module';
 
 @Module({
-  imports: [BooksModule, ExceptionsModule],
+  imports: [BooksModule, ExceptionsModule, InterceptorsModule],
   controllers: [AppController],
   providers: [AppService],
 })
