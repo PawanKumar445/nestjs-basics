@@ -11,9 +11,10 @@ import { BooksModule } from './books/books.module';
 import { ExceptionsModule } from './exceptions/exceptions.module';
 import { InterceptorsModule } from './interceptors/interceptors.module';
 import { DecoratorsModule } from './decorators/decorators.module';
+import { PipesModule } from './pipes/pipes.module';
 
 @Module({
-  imports: [BooksModule, ExceptionsModule, InterceptorsModule, DecoratorsModule],
+  imports: [BooksModule, ExceptionsModule, InterceptorsModule, DecoratorsModule, PipesModule],
   controllers: [AppController],
   providers: [AppService],
 })
