@@ -10,3 +10,15 @@
 * Errors can be thrown in the controller.
 * To use the guard, must use `@UseGuard()` at the top of the route(@Get(), @Post() and so on...)
   * The guard must be passed as the argument of the @UseGuard() function call. Can pass single guard or array of guards.
+
+
+  ```javascript
+  import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+  @Injectable()
+  export class MyAuthGuard implements CanActivate {
+    canActivate(context: ExecutionContext): boolean | Promise<boolean> {
+      // return true or false;
+    }
+  }
+
+  ```

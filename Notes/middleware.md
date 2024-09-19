@@ -18,3 +18,20 @@
  * Can be used for all nest app routes
  * To configure complete app use `app.use(LoggerMiddleware);` in the `main.ts` but logger <b>middleware must be function not class</b>
  * Can not throw error from middleware in response. But the error logs on console
+
+ ```javascript
+ import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Request, Response, NextFunction } from 'express';
+
+@Injectable()
+export class LoggerMiddleware implements NestMiddleware {
+  use(req: Request, res: Response, next: NextFunction) {
+    next();
+  }
+}
+
+// FUNCTIONAL MIDDLEWARE
+export function logger(req: Request, res: Response, next: NextFunction) {
+    next();
+}
+ ```
